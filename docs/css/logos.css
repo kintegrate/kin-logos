@@ -1,0 +1,45 @@
+.ngx-logo { display: inline-block; width: 187px; height: 200px; background-repeat: no-repeat; background-size: contain; }
+
+.ngx-logo-sm { width: 89px; height: 100px; }
+
+.ngx-logo-lg { width: 267px; height: 300px; }
+
+.ngx-logo-xl { width: 356px; height: 400px; }
+
+.ngx-logo-red { background-image: url(../svg/ngx-logo-red.svg) }
+
+.ngx-logo-pink { background-image: url(../svg/ngx-logo-pink.svg) }
+
+.ngx-logo-purple { background-image: url(../svg/ngx-logo-purple.svg) }
+
+.ngx-logo-deeppurple { background-image: url(../svg/ngx-logo-deeppurple.svg) }
+
+.ngx-logo-indigo { background-image: url(../svg/ngx-logo-indigo.svg) }
+
+.ngx-logo-blue { background-image: url(../svg/ngx-logo-blue.svg) }
+
+.ngx-logo-lightblue { background-image: url(../svg/ngx-logo-lightblue.svg) }
+
+.ngx-logo-cyan { background-image: url(../svg/ngx-logo-cyan.svg) }
+
+.ngx-logo-teal { background-image: url(../svg/ngx-logo-teal.svg) }
+
+.ngx-logo-green { background-image: url(../svg/ngx-logo-green.svg) }
+
+.ngx-logo-lightgreen { background-image: url(../svg/ngx-logo-lightgreen.svg) }
+
+.ngx-logo-lime { background-image: url(../svg/ngx-logo-lime.svg) }
+
+.ngx-logo-yellow { background-image: url(../svg/ngx-logo-yellow.svg) }
+
+.ngx-logo-amber { background-image: url(../svg/ngx-logo-amber.svg) }
+
+.ngx-logo-orange { background-image: url(../svg/ngx-logo-orange.svg) }
+
+.ngx-logo-deeporange { background-image: url(../svg/ngx-logo-deeporange.svg) }
+
+.ngx-logo-brown { background-image: url(../svg/ngx-logo-brown.svg) }
+
+.ngx-logo-grey { background-image: url(../svg/ngx-logo-grey.svg) }
+
+.ngx-logo-bluegrey { background-image: url(../svg/ngx-logo-bluegrey.svg) }

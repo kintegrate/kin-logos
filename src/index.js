@@ -3,12 +3,12 @@ const {getColorSets, getSvgCode, writeFile} = require('./utils')
 const writeFileSet = (p, lines) => writeFile(p, lines.join('\n\n'))
 const writeJson = (p, obj) => writeFile(p, JSON.stringify(obj, null, 2))
 
-const readme = [`# Logos`]
+const readme = [`# @ngx-plus/ngx-logos`]
 const html = [
-  `<html><body class="container">`,
+  `<html><body class="container p-2">`,
   `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />`,
   `<link rel="stylesheet" href="./css/logos.css" />`,
-  `<h1>@ngx-plus/ngx-logos</h1>`,
+  `<h1><a href="https://github.com/ngx-plus/ngx-logos">@ngx-plus/ngx-logos</a></h1>`,
   `<div class="row">`,
 ]
 const json = []
@@ -31,10 +31,11 @@ getColorSets().forEach(set => {
   const name = `ngx-logo-${color}.svg`
 
   writeFile(`./svg/${name}`, getSvgCode(set))
+  writeFile(`./docs/svg/${name}`, getSvgCode(set))
 
   readme.push(`## ${name}`)
   readme.push(`> Light: ${set.light} dark: ${set.light}`)
-  readme.push(`![](./svg/${name}?raw=true)`)
+  readme.push(`![](https://ngx-plus.github.io/ngx-logos/svg/${name}?raw=true)`)
 
   html.push(...[
     `<div class="col-md-3">`,
@@ -51,5 +52,6 @@ getColorSets().forEach(set => {
 
 writeFileSet('./README.md', readme)
 writeFileSet('./docs/index.html', html)
+writeFileSet('./docs/css/logos.css', css)
 writeFileSet('./css/logos.css', css)
 writeJson('./json/colors.json', json)
