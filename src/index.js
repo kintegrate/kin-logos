@@ -8,7 +8,7 @@ const html = [
   `<html><body class="container p-2">`,
   `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />`,
   `<link rel="stylesheet" href="./css/logos.css" />`,
-  `<h1><a href="https://github.com/ngx-plus/ngx-logos">@ngx-plus/ngx-logos</a></h1>`,
+  `<h1 class="m-4 text-center"><a href="https://github.com/ngx-plus/ngx-logos">@ngx-plus/ngx-logos</a></h1>`,
   `<div class="row">`,
 ]
 const json = []
@@ -30,24 +30,24 @@ getColorSets().forEach(set => {
   const color = set.name
   const name = `ngx-logo-${color}.svg`
 
-  writeFile(`./svg/${name}`, getSvgCode(set))
-  writeFile(`./docs/svg/${name}`, getSvgCode(set))
+  const svg = getSvgCode(set)
+  writeFile(`./svg/${name}`, svg)
+  writeFile(`./docs/svg/${name}`, svg)
 
   readme.push(`## ${name}`)
   readme.push(`> Light: ${set.light} dark: ${set.light}`)
   readme.push(`![](https://ngx-plus.github.io/ngx-logos/svg/${name}?raw=true)`)
 
   html.push(...[
-    `<div class="col-md-3">`,
-    `<h6>${name}</h6>`,
+    `<div class="col-md-3 text-center mb-4">`,
+    `<h6 class="">${set.name}</h6>`,
     `<i class="ngx-logo ${set.class}"></i>`,
     `</div>`,
   ])
 
 
   json.push(formatSet(set))
-
-  css.push(`.ngx-logo-${color} { background-image: url(../svg/${name}) }`)
+  css.push(`.ngx-logo-${color} { background-image: url('data:image/svg+xml;utf8,${svg.replace(/\n|\r/g, '')}') }`)
 })
 
 writeFileSet('./README.md', readme)
