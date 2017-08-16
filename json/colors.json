@@ -1,0 +1,135 @@
+[
+  {
+    "light": "#F44336",
+    "dark": "#D32F2F",
+    "name": "red",
+    "class": "ngx-logo-red",
+    "svg": "../svg/ngx-logo-red.svg"
+  },
+  {
+    "light": "#E91E63",
+    "dark": "#C2185B",
+    "name": "pink",
+    "class": "ngx-logo-pink",
+    "svg": "../svg/ngx-logo-pink.svg"
+  },
+  {
+    "light": "#9C27B0",
+    "dark": "#7B1FA2",
+    "name": "purple",
+    "class": "ngx-logo-purple",
+    "svg": "../svg/ngx-logo-purple.svg"
+  },
+  {
+    "light": "#673AB7",
+    "dark": "#512DA8",
+    "name": "deeppurple",
+    "class": "ngx-logo-deeppurple",
+    "svg": "../svg/ngx-logo-deeppurple.svg"
+  },
+  {
+    "light": "#3F51B5",
+    "dark": "#303F9F",
+    "name": "indigo",
+    "class": "ngx-logo-indigo",
+    "svg": "../svg/ngx-logo-indigo.svg"
+  },
+  {
+    "light": "#2196F3",
+    "dark": "#1976D2",
+    "name": "blue",
+    "class": "ngx-logo-blue",
+    "svg": "../svg/ngx-logo-blue.svg"
+  },
+  {
+    "light": "#03A9F4",
+    "dark": "#0288D1",
+    "name": "lightblue",
+    "class": "ngx-logo-lightblue",
+    "svg": "../svg/ngx-logo-lightblue.svg"
+  },
+  {
+    "light": "#00BCD4",
+    "dark": "#0097A7",
+    "name": "cyan",
+    "class": "ngx-logo-cyan",
+    "svg": "../svg/ngx-logo-cyan.svg"
+  },
+  {
+    "light": "#009688",
+    "dark": "#00796B",
+    "name": "teal",
+    "class": "ngx-logo-teal",
+    "svg": "../svg/ngx-logo-teal.svg"
+  },
+  {
+    "light": "#4CAF50",
+    "dark": "#388E3C",
+    "name": "green",
+    "class": "ngx-logo-green",
+    "svg": "../svg/ngx-logo-green.svg"
+  },
+  {
+    "light": "#8BC34A",
+    "dark": "#689F38",
+    "name": "lightgreen",
+    "class": "ngx-logo-lightgreen",
+    "svg": "../svg/ngx-logo-lightgreen.svg"
+  },
+  {
+    "light": "#CDDC39",
+    "dark": "#AFB42B",
+    "name": "lime",
+    "class": "ngx-logo-lime",
+    "svg": "../svg/ngx-logo-lime.svg"
+  },
+  {
+    "light": "#FFEB3B",
+    "dark": "#FBC02D",
+    "name": "yellow",
+    "class": "ngx-logo-yellow",
+    "svg": "../svg/ngx-logo-yellow.svg"
+  },
+  {
+    "light": "#FFC107",
+    "dark": "#FFA000",
+    "name": "amber",
+    "class": "ngx-logo-amber",
+    "svg": "../svg/ngx-logo-amber.svg"
+  },
+  {
+    "light": "#FF9800",
+    "dark": "#F57C00",
+    "name": "orange",
+    "class": "ngx-logo-orange",
+    "svg": "../svg/ngx-logo-orange.svg"
+  },
+  {
+    "light": "#FF5722",
+    "dark": "#E64A19",
+    "name": "deeporange",
+    "class": "ngx-logo-deeporange",
+    "svg": "../svg/ngx-logo-deeporange.svg"
+  },
+  {
+    "light": "#795548",
+    "dark": "#5D4037",
+    "name": "brown",
+    "class": "ngx-logo-brown",
+    "svg": "../svg/ngx-logo-brown.svg"
+  },
+  {
+    "light": "#9E9E9E",
+    "dark": "#616161",
+    "name": "grey",
+    "class": "ngx-logo-grey",
+    "svg": "../svg/ngx-logo-grey.svg"
+  },
+  {
+    "light": "#607D8B",
+    "dark": "#455A64",
+    "name": "bluegrey",
+    "class": "ngx-logo-bluegrey",
+    "svg": "../svg/ngx-logo-bluegrey.svg"
+  }
+]
