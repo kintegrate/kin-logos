@@ -6,33 +6,33 @@ const {getColorSets, getSvgCode, writeFile} = require('./utils')
 const writeFileSet = (p, lines) => writeFile(p, lines.join('\n\n'))
 const writeJson = (p, obj) => writeFile(p, JSON.stringify(obj, null, 2))
 
-const readme = [`# @ngx-plus/ngx-logos`]
+const readme = [`# @kintegrate/kin-logos`]
 const html = [
   `<html><body class="container p-2">`,
   `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />`,
   `<link rel="stylesheet" href="./css/logos.css" />`,
-  `<h1 class="m-4 text-center"><a href="https://github.com/ngx-plus/ngx-logos">@ngx-plus/ngx-logos</a></h1>`,
+  `<h1 class="m-4 text-center"><a href="https://github.com/kintegrate/kin-logos">@kintegrate/kin-logos</a></h1>`,
   `<div class="row">`,
 ]
 const json = []
 const css = [
-  `.ngx-logo { display: inline-block; width: 187px; height: 200px; background-repeat: no-repeat; background-size: contain; }`,
-  `.ngx-logo-sm { width: 89px; height: 100px; }`,
-  `.ngx-logo-lg { width: 267px; height: 300px; }`,
-  `.ngx-logo-xl { width: 356px; height: 400px; }`,
+  `.kin-logo { display: inline-block; width: 187px; height: 200px; background-repeat: no-repeat; background-size: contain; }`,
+  `.kin-logo-sm { width: 89px; height: 100px; }`,
+  `.kin-logo-lg { width: 267px; height: 300px; }`,
+  `.kin-logo-xl { width: 356px; height: 400px; }`,
 ]
 const pngs = []
 
 const formatSet = (set) =>  Object.assign(set, {
-  class: `ngx-logo-${set.name}`,
-  svg: `../svg/ngx-logo-${set.name}.svg`
+  class: `kin-logo-${set.name}`,
+  svg: `../svg/kin-logo-${set.name}.svg`
 })
 
 getColorSets().forEach(set => {
   set = formatSet(set)
 
   const color = set.name
-  const name = `ngx-logo-${color}`
+  const name = `kin-logo-${color}`
 
   const svg = getSvgCode(set)
   writeFile(`./svg/${name}.svg`, svg)
@@ -45,7 +45,7 @@ getColorSets().forEach(set => {
     `<div class="col-md-3 text-center mb-4">`,
     `<h6 class="">${set.name}</h6>`,
     `<h6><small style="color: ${set.light}">${set.light}</small><small style="color: ${set.light}">${set.dark}</small></h6>`,
-    `<i class="ngx-logo ${set.class}"></i>`,
+    `<i class="kin-logo ${set.class}"></i>`,
     `</div>`,
   ])
 
@@ -55,7 +55,7 @@ getColorSets().forEach(set => {
   })
 
   json.push(formatSet(set))
-  css.push(`.ngx-logo-${color} { background-image: url('data:image/svg+xml;utf8,${svg.replace(/\n|\r/g, '')}') }`)
+  css.push(`.kin-logo-${color} { background-image: url('data:image/svg+xml;utf8,${svg.replace(/\n|\r/g, '')}') }`)
 })
 
 
