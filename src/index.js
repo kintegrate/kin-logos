@@ -9,7 +9,6 @@ const html = [
   `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />`,
   `<link rel="stylesheet" href="./css/logos.css" />`,
   `<h1 class="m-4 text-center"><a href="https://github.com/kintegrate/kin-logos">@kintegrate/kin-logos</a></h1>`,
-  `<div class="row">`,
 ]
 const json = []
 const css = []
@@ -28,6 +27,8 @@ logoMaps.forEach(logo => {
   const colorSchemes = Object.keys(schemes)
 
   console.log(`Generating logo "${name}" using themes: ${colorSchemes.join(', ')}`)
+
+  html.push(`<h3 class="my-3">${name}</h3><div class="row">`)
 
   // Loop over each of the color schemes
   colorSchemes.forEach(scheme => {
@@ -59,7 +60,7 @@ logoMaps.forEach(logo => {
     // Add item to the HTML
     html.push(
       ...[
-        `<div class="col-md-3 text-center mb-4">`,
+        `<div class="col-md-3 my-4">`,
         `<h6>${imageName}</h6>`,
         `<img src="${image.png}" class="img-fluid" />`,
         `</div>`,
@@ -76,6 +77,7 @@ logoMaps.forEach(logo => {
     css.push(`.${image.name} { background-image: url('data:image/svg+xml;utf8,${image.source.replace(/\n|\r/g, '')}') }`)
   })
 
+  html.push(`</div>`)
 })
 
 console.log('Writing: ./README.md')

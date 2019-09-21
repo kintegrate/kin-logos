@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
+    "watch": "nodemon --watch ./src/",
+    "serve": "live-server ./docs/",
     "test": "true"
   },
   "publishConfig": {
