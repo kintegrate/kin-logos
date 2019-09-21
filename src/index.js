@@ -1,10 +1,7 @@
 const fs = require('fs-extra')
 const svgexport = require('svgexport')
 const { logoMaps } = require('./logos')
-const { cleanup, formatSet, writeFile, searchReplaceColors, extractClasses, extractColors } = require('./utils')
-
-const writeFileSet = (p, lines) => writeFile(p, lines.join('\n\n'))
-const writeJson = (p, obj) => writeFile(p, JSON.stringify(obj, null, 2))
+const { cleanup, formatSet, writeFile, writeFileSet, writeJson, searchReplaceColors, extractClasses, extractColors } = require('./utils')
 
 const readme = [`# @kintegrate/kin-logos`]
 const html = [

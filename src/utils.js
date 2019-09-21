@@ -10,6 +10,9 @@ const writeFile = (p, content) =>
     })
   })
 
+const writeFileSet = (p, lines) => writeFile(p, lines.join('\n\n'))
+const writeJson = (p, obj) => writeFile(p, JSON.stringify(obj, null, 2))
+
 const searchReplaceColors = (source, colorMap) => {
   let result = source;
   const colors = Object.keys(colorMap).reduce((acc, curr) => ([...acc, { from: curr, to: colorMap[curr]}]), [])
@@ -42,6 +45,15 @@ const formatSet = (set) => {
   }
 }
 
+const createLogoMap = (name, filename, defaults) => ({
+  // Prefix of the exported filename
+  name,
+  // Source SVG file
+  source: fs.readFileSync(join(__dirname, 'logos', `${filename}.svg`)).toString('UTF-8'),
+  // Merge in the defaults
+  ...defaults,
+})
+
 const clearPath = (path) => {
   const dirPath = join(process.cwd(), path)
   console.log(`Cleaning up ${dirPath}`)
@@ -70,9 +82,12 @@ const cleanup = () => {
 
 module.exports = {
   writeFile,
+  writeFileSet,
+  writeJson,
   formatSet,
   searchReplaceColors,
   extractClasses,
   extractColors,
   cleanup,
+  createLogoMap,
 }
