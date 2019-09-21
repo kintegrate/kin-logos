@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
-const svgexport = require('svgexport');
-
-const {getColorSets, getSvgCode, writeFile} = require('./utils')
+const svgexport = require('svgexport')
+const { logoMaps } = require('./logos')
+const { cleanup, formatSet, writeFile, searchReplaceColors, extractClasses, extractColors } = require('./utils')
 
 const writeFileSet = (p, lines) => writeFile(p, lines.join('\n\n'))
 const writeJson = (p, obj) => writeFile(p, JSON.stringify(obj, null, 2))
@@ -15,49 +15,71 @@ const html = [
   `<div class="row">`,
 ]
 const json = []
-const css = [
-  `.kin-logo { display: inline-block; width: 187px; height: 200px; background-repeat: no-repeat; background-size: contain; }`,
-  `.kin-logo-sm { width: 89px; height: 100px; }`,
-  `.kin-logo-lg { width: 267px; height: 300px; }`,
-  `.kin-logo-xl { width: 356px; height: 400px; }`,
-]
+const css = []
 const pngs = []
 
-const formatSet = (set) =>  Object.assign(set, {
-  class: `kin-logo-${set.name}`,
-  svg: `../svg/kin-logo-${set.name}.svg`
-})
+// Clean up the directory
+cleanup()
 
-getColorSets().forEach(set => {
-  set = formatSet(set)
+// Loop over each of the logos in the maps
+logoMaps.forEach(logo => {
+  // This is where we will store all the images we are generating
+  const images = {}
 
-  const color = set.name
-  const name = `kin-logo-${color}`
+  // Take the data from the logo
+  const { name, source, schemes, colors } = logo
+  const colorSchemes = Object.keys(schemes)
 
-  const svg = getSvgCode(set)
-  writeFile(`./svg/${name}.svg`, svg)
+  console.log(`Generating logo "${name}" using themes: ${colorSchemes.join(', ')}`)
 
-  readme.push(`## ${name}`)
-  readme.push(`> Light: ${set.light} dark: ${set.light}`)
-  readme.push(`![](./png/${name}.png?raw=true)`)
-
-  html.push(...[
-    `<div class="col-md-3 text-center mb-4">`,
-    `<h6 class="">${set.name}</h6>`,
-    `<h6><small style="color: ${set.light}">${set.light}</small><small style="color: ${set.light}">${set.dark}</small></h6>`,
-    `<i class="kin-logo ${set.class}"></i>`,
-    `</div>`,
-  ])
-
-  pngs.push({
-    "input": [`./svg/${name}.svg`],
-    "output": [`./png/${name}.png`],
+  // Loop over each of the color schemes
+  colorSchemes.forEach(scheme => {
+    // The name of the generated image
+    const imageName = `${name}-${scheme}`
+    // This is where all the variations/classes are generated
+    images[imageName] = {
+      name: imageName,
+      svg: `./svg/${imageName}.svg`,
+      png: `./png/${imageName}.png`,
+      source: searchReplaceColors(source, schemes[scheme]),
+      classes: extractClasses(colors, schemes[scheme], imageName),
+      colors: extractColors(colors, schemes[scheme], imageName),
+    }
   })
 
-  json.push(formatSet(set))
-  css.push(`.kin-logo-${color} { background-image: url('data:image/svg+xml;utf8,${svg.replace(/\n|\r/g, '')}') }`)
-})
+  // Export the defined images to files
+  Object.keys(images).forEach(imageName => {
+    const image = images[imageName];
 
+    // Create the SVG
+    writeFile(image.svg, image.source)
+
+    // Add item to the README
+    readme.push(`## ${imageName}`)
+    // readme.push(`> Light: ${set.light} dark: ${set.light}`)
+    readme.push(`![](${image.png}?raw=true)`)
+
+    // Add item to the HTML
+    html.push(
+      ...[
+        `<div class="col-md-3 text-center mb-4">`,
+        `<h6>${imageName}</h6>`,
+        `<img src="${image.png}" class="img-fluid" />`,
+        `</div>`,
+      ],
+    )
+
+    // Add item to the PNGs
+    pngs.push({ input: [image.svg], output: [image.png] })
+
+    // Add item to JSON
+    json.push(formatSet(images[imageName]))
+
+    // Add item to the CSS file
+    css.push(`.${image.name} { background-image: url('data:image/svg+xml;utf8,${image.source.replace(/\n|\r/g, '')}') }`)
+  })
+
+})
 
 console.log('Writing: ./README.md')
 writeFileSet('./README.md', readme)
@@ -74,7 +96,6 @@ writeJson('./json/colors.json', json)
 console.log('Converting svg files to png')
 
 svgexport.render(pngs, () => {
-
   console.log('Done Converting')
 
   // Copy created files to docs folder so they get published on Github Pages

@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "start": "node .",
     "test": "true"
   },
   "publishConfig": {
@@ -18,5 +19,11 @@
     "material-colors": "^1.2.5",
     "fs-extra": "^4.0.1",
     "svgexport": "^0.3.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all",
+    "printWidth": 120
   }
 }

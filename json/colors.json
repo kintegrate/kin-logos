@@ -1,135 +1,98 @@
 [
   {
-    "light": "#F44336",
-    "dark": "#D32F2F",
-    "name": "red",
-    "class": "kin-logo-red",
-    "svg": "../svg/kin-logo-red.svg"
+    "name": "kin-coin-gold",
+    "png": "./png/kin-coin-gold.png",
+    "svg": "./svg/kin-coin-gold.svg",
+    "colors": {}
   },
   {
-    "light": "#E91E63",
-    "dark": "#C2185B",
-    "name": "pink",
-    "class": "kin-logo-pink",
-    "svg": "../svg/kin-logo-pink.svg"
+    "name": "kin-coin-dark",
+    "png": "./png/kin-coin-dark.png",
+    "svg": "./svg/kin-coin-dark.svg",
+    "colors": {
+      "kin-coin-dark-coin-outer-border-top": "#222",
+      "kin-coin-dark-coin-outer-border-bottom": "#555",
+      "kin-coin-dark-coin-outer-surface-border-top": "#555",
+      "kin-coin-dark-coin-outer-surface-border-bottom": "#222",
+      "kin-coin-dark-coin-outer-surface-top": "#222",
+      "kin-coin-dark-coin-outer-surface-bottom": "#555",
+      "kin-coin-dark-coin-center-border-solid": "#888",
+      "kin-coin-dark-coin-inner-border-top": "#222",
+      "kin-coin-dark-coin-inner-border-bottom": "#555",
+      "kin-coin-dark-coin-inner-surface-top": "#555",
+      "kin-coin-dark-coin-inner-surface-bottom": "#222",
+      "kin-coin-dark-coin-center-outer-border-top": "#111",
+      "kin-coin-dark-coin-center-outer-border-bottom": "#222",
+      "kin-coin-dark-coin-center-inner-border-top": "#666",
+      "kin-coin-dark-coin-center-inner-border-bottom": "#333",
+      "kin-coin-dark-kin-logo-outer-border-top": "#333",
+      "kin-coin-dark-kin-logo-outer-border-bottom": "#444",
+      "kin-coin-dark-kin-logo-inner-border-top": "#444",
+      "kin-coin-dark-kin-logo-inner-border-bottom": "#333",
+      "kin-coin-dark-kin-logo-surface-border-top": "#777",
+      "kin-coin-dark-kin-logo-surface-border-bottom": "#666",
+      "kin-coin-dark-kin-logo-surface-top": "#333",
+      "kin-coin-dark-kin-logo-surface-bottom": "#111"
+    }
   },
   {
-    "light": "#9C27B0",
-    "dark": "#7B1FA2",
-    "name": "purple",
-    "class": "kin-logo-purple",
-    "svg": "../svg/kin-logo-purple.svg"
+    "name": "kin-coin-dark-gold",
+    "png": "./png/kin-coin-dark-gold.png",
+    "svg": "./svg/kin-coin-dark-gold.svg",
+    "colors": {
+      "kin-coin-dark-gold-coin-outer-border-top": "#222",
+      "kin-coin-dark-gold-coin-outer-border-bottom": "#555",
+      "kin-coin-dark-gold-coin-outer-surface-border-top": "#555",
+      "kin-coin-dark-gold-coin-outer-surface-border-bottom": "#222",
+      "kin-coin-dark-gold-coin-outer-surface-top": "#222",
+      "kin-coin-dark-gold-coin-outer-surface-bottom": "#555",
+      "kin-coin-dark-gold-coin-center-border-solid": "#888",
+      "kin-coin-dark-gold-coin-inner-border-top": "#222",
+      "kin-coin-dark-gold-coin-inner-border-bottom": "#555",
+      "kin-coin-dark-gold-coin-inner-surface-top": "#555",
+      "kin-coin-dark-gold-coin-inner-surface-bottom": "#222",
+      "kin-coin-dark-gold-coin-center-outer-border-top": "#111",
+      "kin-coin-dark-gold-coin-center-outer-border-bottom": "#222",
+      "kin-coin-dark-gold-coin-center-inner-border-top": "#666",
+      "kin-coin-dark-gold-coin-center-inner-border-bottom": "#333",
+      "kin-coin-dark-gold-kin-logo-outer-border-top": "#F8C443",
+      "kin-coin-dark-gold-kin-logo-outer-border-bottom": "#FFF7B6",
+      "kin-coin-dark-gold-kin-logo-inner-border-top": "#F1AD39",
+      "kin-coin-dark-gold-kin-logo-inner-border-bottom": "#B6724F",
+      "kin-coin-dark-gold-kin-logo-surface-border-top": "#FFEACA",
+      "kin-coin-dark-gold-kin-logo-surface-border-bottom": "#F8CC43",
+      "kin-coin-dark-gold-kin-logo-surface-top": "#FAD75F",
+      "kin-coin-dark-gold-kin-logo-surface-bottom": "#F6CB40"
+    }
   },
   {
-    "light": "#673AB7",
-    "dark": "#512DA8",
-    "name": "deeppurple",
-    "class": "kin-logo-deeppurple",
-    "svg": "../svg/kin-logo-deeppurple.svg"
-  },
-  {
-    "light": "#3F51B5",
-    "dark": "#303F9F",
-    "name": "indigo",
-    "class": "kin-logo-indigo",
-    "svg": "../svg/kin-logo-indigo.svg"
-  },
-  {
-    "light": "#2196F3",
-    "dark": "#1976D2",
-    "name": "blue",
-    "class": "kin-logo-blue",
-    "svg": "../svg/kin-logo-blue.svg"
-  },
-  {
-    "light": "#03A9F4",
-    "dark": "#0288D1",
-    "name": "lightblue",
-    "class": "kin-logo-lightblue",
-    "svg": "../svg/kin-logo-lightblue.svg"
-  },
-  {
-    "light": "#00BCD4",
-    "dark": "#0097A7",
-    "name": "cyan",
-    "class": "kin-logo-cyan",
-    "svg": "../svg/kin-logo-cyan.svg"
-  },
-  {
-    "light": "#009688",
-    "dark": "#00796B",
-    "name": "teal",
-    "class": "kin-logo-teal",
-    "svg": "../svg/kin-logo-teal.svg"
-  },
-  {
-    "light": "#4CAF50",
-    "dark": "#388E3C",
-    "name": "green",
-    "class": "kin-logo-green",
-    "svg": "../svg/kin-logo-green.svg"
-  },
-  {
-    "light": "#8BC34A",
-    "dark": "#689F38",
-    "name": "lightgreen",
-    "class": "kin-logo-lightgreen",
-    "svg": "../svg/kin-logo-lightgreen.svg"
-  },
-  {
-    "light": "#CDDC39",
-    "dark": "#AFB42B",
-    "name": "lime",
-    "class": "kin-logo-lime",
-    "svg": "../svg/kin-logo-lime.svg"
-  },
-  {
-    "light": "#FFEB3B",
-    "dark": "#FBC02D",
-    "name": "yellow",
-    "class": "kin-logo-yellow",
-    "svg": "../svg/kin-logo-yellow.svg"
-  },
-  {
-    "light": "#FFC107",
-    "dark": "#FFA000",
-    "name": "amber",
-    "class": "kin-logo-amber",
-    "svg": "../svg/kin-logo-amber.svg"
-  },
-  {
-    "light": "#FF9800",
-    "dark": "#F57C00",
-    "name": "orange",
-    "class": "kin-logo-orange",
-    "svg": "../svg/kin-logo-orange.svg"
-  },
-  {
-    "light": "#FF5722",
-    "dark": "#E64A19",
-    "name": "deeporange",
-    "class": "kin-logo-deeporange",
-    "svg": "../svg/kin-logo-deeporange.svg"
-  },
-  {
-    "light": "#795548",
-    "dark": "#5D4037",
-    "name": "brown",
-    "class": "kin-logo-brown",
-    "svg": "../svg/kin-logo-brown.svg"
-  },
-  {
-    "light": "#9E9E9E",
-    "dark": "#616161",
-    "name": "grey",
-    "class": "kin-logo-grey",
-    "svg": "../svg/kin-logo-grey.svg"
-  },
-  {
-    "light": "#607D8B",
-    "dark": "#455A64",
-    "name": "bluegrey",
-    "class": "kin-logo-bluegrey",
-    "svg": "../svg/kin-logo-bluegrey.svg"
+    "name": "kin-coin-dark-pink",
+    "png": "./png/kin-coin-dark-pink.png",
+    "svg": "./svg/kin-coin-dark-pink.svg",
+    "colors": {
+      "kin-coin-dark-pink-coin-outer-border-top": "#222",
+      "kin-coin-dark-pink-coin-outer-border-bottom": "#555",
+      "kin-coin-dark-pink-coin-outer-surface-border-top": "#555",
+      "kin-coin-dark-pink-coin-outer-surface-border-bottom": "#222",
+      "kin-coin-dark-pink-coin-outer-surface-top": "#222",
+      "kin-coin-dark-pink-coin-outer-surface-bottom": "#555",
+      "kin-coin-dark-pink-coin-center-border-solid": "#888",
+      "kin-coin-dark-pink-coin-inner-border-top": "#222",
+      "kin-coin-dark-pink-coin-inner-border-bottom": "#555",
+      "kin-coin-dark-pink-coin-inner-surface-top": "#555",
+      "kin-coin-dark-pink-coin-inner-surface-bottom": "#222",
+      "kin-coin-dark-pink-coin-center-outer-border-top": "#111",
+      "kin-coin-dark-pink-coin-center-outer-border-bottom": "#222",
+      "kin-coin-dark-pink-coin-center-inner-border-top": "#666",
+      "kin-coin-dark-pink-coin-center-inner-border-bottom": "#333",
+      "kin-coin-dark-pink-kin-logo-outer-border-top": "#f6bcd8",
+      "kin-coin-dark-pink-kin-logo-outer-border-bottom": "#89394f",
+      "kin-coin-dark-pink-kin-logo-inner-border-top": "#89394f",
+      "kin-coin-dark-pink-kin-logo-inner-border-bottom": "#f6bcd8",
+      "kin-coin-dark-pink-kin-logo-surface-border-top": "#89394f",
+      "kin-coin-dark-pink-kin-logo-surface-border-bottom": "#f6bcd8",
+      "kin-coin-dark-pink-kin-logo-surface-top": "#f6bcd8",
+      "kin-coin-dark-pink-kin-logo-surface-bottom": "#89394f"
+    }
   }
 ]
