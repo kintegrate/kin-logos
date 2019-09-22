@@ -1,6 +1,40 @@
 const { createLogoMap } = require('./utils')
 
-const colorMapCoinDark = {
+const colorMapLogoDark = {
+  '#F8C443': '#333', // KIN LOGO OUTER BORDER TOP
+  '#FFF7B6': '#444', // KIN LOGO INNER BORDER TOP
+  '#F1AD39': '#444', // KIN LOGO INNER BORDER TOP
+  '#B6724F': '#333', // KIN LOGO INNER BORDER BOTTOM
+  '#FFEACA': '#777', // KIN LOGO SURFACE BORDER TOP
+  '#F8CC43': '#666', // KIN LOGO SURFACE BORDER BOTTOM
+  '#FAD75F': '#333', // KIN LOGO SURFACE TOP
+  '#F6CB40': '#111', // KIN LOGO SURFACE BOTTOM
+}
+
+const colorMapLogoPurple = {
+  '#F8C443': '#6f41e8', // KIN LOGO OUTER BORDER TOP
+  '#FFF7B6': '#6f41e8', // KIN LOGO INNER BORDER TOP
+  '#F1AD39': '#a890f2', // KIN LOGO INNER BORDER TOP
+  '#B6724F': '#a890f2', // KIN LOGO INNER BORDER BOTTOM
+  '#FFEACA': '#6f41e8', // KIN LOGO SURFACE BORDER TOP
+  '#F8CC43': '#6f41e8', // KIN LOGO SURFACE BORDER BOTTOM
+  '#FAD75F': '#6f41e8', // KIN LOGO SURFACE TOP
+  '#F6CB40': '#6f41e8', // KIN LOGO SURFACE BOTTOM
+
+}
+
+const colorMapLogoDarkPink = {
+  '#F8C443': '#f6bcd8', // KIN LOGO OUTER BORDER TOP
+  '#FFF7B6': '#89394f', // KIN LOGO INNER BORDER TOP
+  '#F1AD39': '#89394f', // KIN LOGO INNER BORDER TOP
+  '#B6724F': '#f6bcd8', // KIN LOGO INNER BORDER BOTTOM
+  '#FFEACA': '#89394f', // KIN LOGO SURFACE BORDER TOP
+  '#F8CC43': '#f6bcd8', // KIN LOGO SURFACE BORDER BOTTOM
+  '#FAD75F': '#f6bcd8', // KIN LOGO SURFACE TOP
+  '#F6CB40': '#89394f', // KIN LOGO SURFACE BOTTOM
+}
+
+const colorMapCoinBackgroundDark = {
   '#F0F284': '#222',
   '#D98A40': '#555',
   '#FDF6B5': '#555',
@@ -16,38 +50,6 @@ const colorMapCoinDark = {
   '#F5E9A4': '#222',
   '#FFF9B7': '#666',
   '#F9CC44': '#333',
-  '#F8C443': '#333',
-  '#FFF7B6': '#444',
-  '#F1AD39': '#444',
-  '#B6724F': '#333',
-  '#F8CC43': '#666',
-  '#FFEACA': '#777',
-  '#F6CB40': '#111',
-  '#FAD75F': '#333',
-}
-
-const colorMapCoinDarkGold = {
-  ...colorMapCoinDark,
-  '#F8C443': '#F8C443', // KIN LOGO OUTER BORDER TOP
-  '#FFF7B6': '#FFF7B6', // KIN LOGO INNER BORDER TOP
-  '#F1AD39': '#F1AD39', // KIN LOGO INNER BORDER TOP
-  '#B6724F': '#B6724F', // KIN LOGO INNER BORDER BOTTOM
-  '#FFEACA': '#FFEACA', // KIN LOGO SURFACE BORDER TOP
-  '#F8CC43': '#F8CC43', // KIN LOGO SURFACE BORDER BOTTOM
-  '#FAD75F': '#FAD75F', // KIN LOGO SURFACE TOP
-  '#F6CB40': '#F6CB40', // KIN LOGO SURFACE BOTTOM
-}
-
-const colorMapCoinDarkPink = {
-  ...colorMapCoinDark,
-  '#F8C443': '#f6bcd8', // KIN LOGO OUTER BORDER TOP
-  '#FFF7B6': '#89394f', // KIN LOGO INNER BORDER TOP
-  '#F1AD39': '#89394f', // KIN LOGO INNER BORDER TOP
-  '#B6724F': '#f6bcd8', // KIN LOGO INNER BORDER BOTTOM
-  '#FFEACA': '#89394f', // KIN LOGO SURFACE BORDER TOP
-  '#F8CC43': '#f6bcd8', // KIN LOGO SURFACE BORDER BOTTOM
-  '#FAD75F': '#f6bcd8', // KIN LOGO SURFACE TOP
-  '#F6CB40': '#89394f', // KIN LOGO SURFACE BOTTOM
 }
 
 const kinCoinDefaults = {
@@ -80,9 +82,30 @@ const kinCoinDefaults = {
   // The various color schemes for this logo
   schemes: {
     'gold': {},
-    'dark': colorMapCoinDark,
-    'dark-gold': colorMapCoinDarkGold,
-    'dark-pink': colorMapCoinDarkPink,
+    'dark': { ...colorMapCoinBackgroundDark, ...colorMapLogoDark },
+    'dark-gold': { ...colorMapCoinBackgroundDark },
+    'dark-pink': { ...colorMapCoinBackgroundDark, ...colorMapLogoDarkPink },
+  }
+}
+
+const kinLogoDefaults = {
+  // All the color we want to extract into CSS and replace with the schemes
+  colors: [
+    { color: '#F8C443', class: 'kin-logo-outer-border-top' },
+    { color: '#FFF7B6', class: 'kin-logo-outer-border-bottom' },
+    { color: '#F1AD39', class: 'kin-logo-inner-border-top' },
+    { color: '#B6724F', class: 'kin-logo-inner-border-bottom' },
+    { color: '#FFEACA', class: 'kin-logo-surface-border-top' },
+    { color: '#F8CC43', class: 'kin-logo-surface-border-bottom' },
+    { color: '#FAD75F', class: 'kin-logo-surface-top' },
+    { color: '#F6CB40', class: 'kin-logo-surface-bottom' },
+  ],
+  // The various color schemes for this logo
+  schemes: {
+    'gold': {},
+    'dark': colorMapLogoDark,
+    'purple': colorMapLogoPurple,
+    'dark-pink': colorMapLogoDarkPink,
   }
 }
 
@@ -90,6 +113,7 @@ const logoMaps = [
   createLogoMap('kin-coin-large', 'kin-coin-gold-large', kinCoinDefaults),
   createLogoMap('kin-coin-medium', 'kin-coin-gold-medium', kinCoinDefaults),
   createLogoMap('kin-coin-small', 'kin-coin-gold-small', kinCoinDefaults),
+  createLogoMap('kin-logo', 'kin-logo-gold', kinLogoDefaults),
 ]
 
 module.exports = { logoMaps }

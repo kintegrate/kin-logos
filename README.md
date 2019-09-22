@@ -47,3 +47,19 @@
 ## kin-coin-small-dark-pink
 
 ![](./png/kin-coin-small-dark-pink.png?raw=true)
+
+## kin-logo-gold
+
+![](./png/kin-logo-gold.png?raw=true)
+
+## kin-logo-dark
+
+![](./png/kin-logo-dark.png?raw=true)
+
+## kin-logo-purple
+
+![](./png/kin-logo-purple.png?raw=true)
+
+## kin-logo-dark-pink
+
+![](./png/kin-logo-dark-pink.png?raw=true)

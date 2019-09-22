@@ -32,8 +32,19 @@ const extractClasses = (colors, scheme, prefix) => {
 const extractColors = (colors, scheme, prefix) => {
   return colors.reduce((acc, curr) => ({
     ...acc,
-    [`${prefix}-${curr.class}`]: scheme[curr.color],
+    [curr.class]: scheme[curr.color] || curr.color,
   }), {})
+}
+
+const extractData = (imageName, source, colors, scheme) => {
+  return {
+    name: imageName,
+    svg: `./svg/${imageName}.svg`,
+    png: `./png/${imageName}.png`,
+    source: searchReplaceColors(source, scheme),
+    classes: extractClasses(colors, scheme, imageName),
+    colors: extractColors(colors, scheme, imageName),
+  }
 }
 
 const formatSet = (set) => {
@@ -41,6 +52,7 @@ const formatSet = (set) => {
     name: set.name,
     png: set.png,
     svg: set.svg,
+    source: set.source,
     colors: set.colors,
   }
 }
@@ -54,9 +66,13 @@ const createLogoMap = (name, filename, defaults) => ({
   ...defaults,
 })
 
+const readTemplate = name => {
+  return fs.readFileSync(join(__dirname, 'templates', name)).toString('UTF-8')
+}
+
 const clearPath = (path) => {
   const dirPath = join(process.cwd(), path)
-  console.log(`Cleaning up ${dirPath}`)
+  console.log(`[clear path] ${dirPath}`)
   if (!fs.existsSync(dirPath)) {
     ensureDirSync(dirPath)
     return;
@@ -75,6 +91,8 @@ const cleanup = () => {
   clearPath('docs/css')
   clearPath('docs/png')
   clearPath('docs/svg')
+  clearPath('docs/json')
+  clearPath('css')
   clearPath('svg')
   clearPath('png')
   clearPath('json')
@@ -90,4 +108,6 @@ module.exports = {
   extractColors,
   cleanup,
   createLogoMap,
+  extractData,
+  readTemplate,
 }
