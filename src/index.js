@@ -53,7 +53,9 @@ logoMaps.forEach(logo => {
       ...[
         `<div class="col-md-3 my-4">`,
         `  <h6>${imageName}</h6>`,
-        `  <img src="${image.png}" class="img-fluid" />`,
+        `  <div style="background-color: ${imageName.includes('white') ? '#000' : '' }" class="p-1">`,
+        `    <img src="${image.png}" class="img-fluid" />`,
+        `  </div>`,
         `</div>`,
       ],
     )

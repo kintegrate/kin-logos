@@ -20,7 +20,6 @@ const colorMapLogoPurple = {
   '#F8CC43': '#6f41e8', // KIN LOGO SURFACE BORDER BOTTOM
   '#FAD75F': '#6f41e8', // KIN LOGO SURFACE TOP
   '#F6CB40': '#6f41e8', // KIN LOGO SURFACE BOTTOM
-
 }
 
 const colorMapLogoDarkPink = {
@@ -109,11 +108,36 @@ const kinLogoDefaults = {
   }
 }
 
+const kinDiamondDefaults = {
+  colors: [
+    { color: '#FFFFFF', class: 'background' },
+  ],
+  // The various color schemes for this logo
+  schemes: {
+    'white': {},
+    'black': { '#FFFFFF': '#000000'},
+    'purple': { '#FFFFFF': '#6F41E8'},
+    'dark-pink': { '#FFFFFF': '#F6BCD8'},
+  }
+}
+
 const logoMaps = [
+  // Kin Coin
   createLogoMap('kin-coin-large', 'kin-coin-gold-large', kinCoinDefaults),
   createLogoMap('kin-coin-medium', 'kin-coin-gold-medium', kinCoinDefaults),
   createLogoMap('kin-coin-small', 'kin-coin-gold-small', kinCoinDefaults),
-  createLogoMap('kin-logo', 'kin-logo-gold', kinLogoDefaults),
+  // Kin Logo
+  createLogoMap('kin-logo-large', 'kin-logo-large', kinLogoDefaults),
+  createLogoMap('kin-logo-medium', 'kin-logo-medium', kinLogoDefaults),
+  createLogoMap('kin-logo-small', 'kin-logo-small', kinLogoDefaults),
+  // Kin Logo Diamond
+  createLogoMap('kin-diamond-large', 'kin-diamond-large', kinDiamondDefaults),
+  createLogoMap('kin-diamond-medium', 'kin-diamond-medium', kinDiamondDefaults),
+  createLogoMap('kin-diamond-small', 'kin-diamond-small', kinDiamondDefaults),
+  // Kin Logo Text
+  createLogoMap('kin-text-large', 'kin-text-large', kinDiamondDefaults),
+  createLogoMap('kin-text-medium', 'kin-text-medium', kinDiamondDefaults),
+  createLogoMap('kin-text-small', 'kin-text-small', kinDiamondDefaults),
 ]
 
 module.exports = { logoMaps }
