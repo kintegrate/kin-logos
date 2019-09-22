@@ -29,7 +29,7 @@ const extractClasses = (colors, scheme, prefix) => {
   }), {})
 }
 
-const extractColors = (colors, scheme, prefix) => {
+const extractColors = (colors, scheme) => {
   return colors.reduce((acc, curr) => ({
     ...acc,
     [curr.class]: scheme[curr.color] || curr.color,
@@ -41,9 +41,11 @@ const extractData = (imageName, source, colors, scheme) => {
     name: imageName,
     svg: `./svg/${imageName}.svg`,
     png: `./png/${imageName}.png`,
+    originalSource: source,
+    originalColors: extractColors(colors, {}),
     source: searchReplaceColors(source, scheme),
     classes: extractClasses(colors, scheme, imageName),
-    colors: extractColors(colors, scheme, imageName),
+    colors: extractColors(colors, scheme),
   }
 }
 
@@ -52,6 +54,8 @@ const formatSet = (set) => {
     name: set.name,
     png: set.png,
     svg: set.svg,
+    originalSource: set.originalSource,
+    originalColors: set.originalColors,
     source: set.source,
     colors: set.colors,
   }
