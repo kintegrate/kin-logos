@@ -53,7 +53,7 @@ logoMaps.forEach(logo => {
       ...[
         `<div class="col-md-3 my-4">`,
         `  <h6>${imageName}</h6>`,
-        `  <div style="background-color: ${imageName.includes('white') ? '#000' : '' }" class="p-1">`,
+        `  <div style="background-color: ${imageName.includes('white') ? '#000' : '' }" class="p-2 text-center">`,
         `    <img src="${image.png}" class="img-fluid" />`,
         `  </div>`,
         `</div>`,
@@ -95,6 +95,7 @@ svgexport.render(output.pngs, () => {
   fs.copySync('./png', './docs/png')
   fs.copySync('./svg', './docs/svg')
   fs.copySync('./json', './docs/json')
+
+  console.log('[done] 🚀')
 })
 
-console.log('All done!')

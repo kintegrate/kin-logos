@@ -111,13 +111,14 @@ const kinLogoDefaults = {
 const kinDiamondDefaults = {
   colors: [
     { color: '#FFFFFF', class: 'background' },
+    { color: '#000000', class: 'foreground' },
   ],
   // The various color schemes for this logo
   schemes: {
-    'white': {},
-    'black': { '#FFFFFF': '#000000'},
-    'purple': { '#FFFFFF': '#6F41E8'},
-    'dark-pink': { '#FFFFFF': '#F6BCD8'},
+    'white': { '#111111': '#000000' },
+    'black': { '#FFFFFF': '#000000', '#111111': '#FFFFFF'},
+    'purple': { '#FFFFFF': '#6F41E8', '#111111': '#FFFFFF' },
+    'dark-pink': { '#FFFFFF': '#F6BCD8', '#111111': '#FFFFFF'  },
   }
 }
 
