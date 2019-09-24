@@ -17,7 +17,7 @@ const searchReplaceColors = (source, colorMap) => {
   let result = source;
   const colors = Object.keys(colorMap).reduce((acc, curr) => ([...acc, { from: curr, to: colorMap[curr]}]), [])
   colors.forEach(({ from, to }) => {
-    result = result.replace(from, to);
+    result = result.replace(new RegExp(from, 'g'), to);
   })
   return result;
 }
@@ -36,12 +36,19 @@ const extractColors = (colors, scheme) => {
   }), {})
 }
 
+const reverseColorScheme = (colors) => {
+  return colors.reduce((acc, curr) => ({
+    ...acc,
+    [curr.color]: curr.class,
+  }), {})
+}
+
 const extractData = (imageName, source, colors, scheme) => {
   return {
     name: imageName,
     svg: `./svg/${imageName}.svg`,
     png: `./png/${imageName}.png`,
-    originalSource: source,
+    originalSource: searchReplaceColors(source, reverseColorScheme(colors)),
     originalColors: extractColors(colors, {}),
     source: searchReplaceColors(source, scheme),
     classes: extractClasses(colors, scheme, imageName),
