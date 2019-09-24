@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /editor/ --deploy-url /editor/ --output-path ../docs/editor --prod",
+    "build": "ng build --base-href /kin-logos/editor/ --deploy-url /kin-logos/editor/ --output-path ../docs/editor --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
