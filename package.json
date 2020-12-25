@@ -18,9 +18,9 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "material-colors": "^1.2.5",
-    "fs-extra": "^4.0.1",
-    "svgexport": "^0.3.2"
+    "material-colors": "^1.2.6",
+    "fs-extra": "^9.0.1",
+    "svgexport": "^0.4.1"
   },
   "prettier": {
     "singleQuote": true,
